@@ -1,0 +1,29 @@
+* {
+  outline: none;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  background: url("/third-step-project/src/images/fon.jpg") center / cover no-repeat;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.wrapper {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+
+  .btn-position{
+    display: flex;
+    align-items: center;
+  }
+}

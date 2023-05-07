@@ -1,0 +1,80 @@
+@use "../settings/mixins";
+@use "../settings/variables";
+
+.header {
+  &__modal-wrapper {
+    position: fixed;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__modal {
+    position: relative;
+    background-color: variables.$color-modal-log-form;
+    width: 600px;
+    margin: auto;
+    transform: translateY(-50%);
+    top: 50%;
+    padding: 20px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px 0 10px 10px;
+    text-align: center;
+  }
+
+  &__modal-text {
+    font-weight: bold;
+    color: variables.$color-black;
+    margin: 30px auto;
+    font-size: 20px;
+  }
+
+  &__modal-input {
+    @include mixins.form-input;
+    border: none;
+    border-bottom: 1px solid variables.$color-black;
+    outline: none;
+    background: transparent;
+  }
+
+  &__btn-submit {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 20px;
+    margin: 10px auto;
+    color: variables.$color-black;
+    border-radius: 5px;
+  }
+  &__btn-submit:hover {
+    background: variables.$color-btn-submit-hover;
+    transition: .3s;
+  }
+
+  &__modal-close {
+    position: absolute;
+    top: -35px;
+    right: -35px;
+    width: 33px;
+    height: 33px;
+    font-size: 30px;
+    font-weight: 700;
+    color: variables.$color-modal-close;
+    border: 2px solid;
+    border-radius: 35% 35% 35% 0;
+    cursor: pointer;
+  }
+
+  &__btn, &__btn-create {
+    @include mixins.btn;
+    background: variables.$color-btn-log-create;
+    padding: 10px 30px;
+
+  }
+
+  &__btn:hover, &__btn-create:hover {
+    @include mixins.btn-hover;
+  }
+}
